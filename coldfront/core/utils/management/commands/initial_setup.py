@@ -18,12 +18,12 @@ class Command(BaseCommand):
 
             else:
                 print("""WARNING: Running this command initializes the ColdFront database and may modify/delete data in your existing ColdFront database. This command is typically only run once.""")
-                user_response = input("Do you want to proceed?(yes):")
-            
-                if user_response == "yes":
-                    run_setup()
-                else:
-                    print("Please enter 'yes' if you wish to run intital setup.")
+                #user_response = input("Do you want to proceed?(yes):")
+
+                #if user_response == "yes":
+                run_setup()
+                #else:
+                #    print("Please enter 'yes' if you wish to run intital setup.")
 
 def run_setup():
     call_command('migrate')
