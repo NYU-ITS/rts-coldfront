@@ -5,10 +5,9 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app
-COPY requirements.txt ./
-RUN pip3 install -r requirements.txt
-RUN pip3 install setuptools
 COPY . .
+
+RUN python3 -m pip install .
 
 RUN python3 ./manage.py initial_setup
 RUN python3 ./manage.py load_test_data
